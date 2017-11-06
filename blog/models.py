@@ -9,6 +9,7 @@ class Post(models.Model):
     published_date = models.DateTimeField(blank=True, null=True)
     upvoteCount = models.IntegerField(default=0)
     downvoteCount = models.IntegerField(default=0)
+    comment = models.TextField(null=True) 	
 	
     def publish(self):
         self.published_date = timezone.now()
