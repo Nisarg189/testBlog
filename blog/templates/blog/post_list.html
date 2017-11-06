@@ -8,6 +8,9 @@
             </div>
             <h1><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h1>
             <p>{{ post.text|linebreaksbr }}</p>
+			<p><font color="green">{{ post.upvoteCount|linebreaksbr }}</font><font color="red"> {{ post.downvoteCount|linebreaksbr }}</font></p>
+			<a class="btn btn-default" href="{% url 'post_upvote' pk=post.pk %}"><span class="glyphicon glyphicon-arrow-up"></span></a>
+			<a class="btn btn-default" href="{% url 'post_downvote' pk=post.pk %}"><span class="glyphicon glyphicon-arrow-down"></span></a>
         </div>
     {% endfor %}
 {% endblock %}
