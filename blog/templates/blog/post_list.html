@@ -11,6 +11,7 @@
 			<p><font color="green">{{ post.upvoteCount|linebreaksbr }}</font><font color="red"> {{ post.downvoteCount|linebreaksbr }}</font></p>
 			<a class="btn btn-default" href="{% url 'post_upvote' pk=post.pk %}"><span class="glyphicon glyphicon-arrow-up"></span></a>
 			<a class="btn btn-default" href="{% url 'post_downvote' pk=post.pk %}"><span class="glyphicon glyphicon-arrow-down"></span></a>
+			<a class="btn btn-default" href="{% url 'post_comment' pk=post.pk %}"><span class="glyphicon glyphicon-comment"></span></a>
         </div>
     {% endfor %}
 {% endblock %}
